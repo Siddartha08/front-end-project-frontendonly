@@ -27,7 +27,7 @@ export const addNote = (note) => {
     return (dispatch) => {
     
             dispatch({type:FETCHING})
-            axios.post('https://notesapplambda.herokuapp.com/notes', note)
+            axios.post('https://notesapplambda.herokuapp.com/notes/notes', note)
             .then((response) => {
                 dispatch({type:ADD_NOTE, notes:response.data})
             
