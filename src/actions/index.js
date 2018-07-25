@@ -10,7 +10,7 @@ export const FETCHING = 'FETCHING';
 
 export const getNotes = () => {
     return (dispatch) => {
-        axios.get('https://notesapplambda.herokuapp.com/notes')
+        axios.get('https://notesapplambda.herokuapp.com/')
         .then((response) => {
             console.log(response.data)
             dispatch({type:SUCCESS, notes:response.data})
