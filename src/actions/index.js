@@ -10,7 +10,7 @@ export const FETCHING = 'FETCHING';
 
 export const getNotes = () => {
     return (dispatch) => {
-        axios.get('http://localhost:3333/noteslist')
+        axios.get('https://notesapplambda.herokuapp.com/notes')
         .then((response) => {
             console.log(response.data)
             dispatch({type:SUCCESS, notes:response.data})
@@ -27,7 +27,7 @@ export const addNote = (note) => {
     return (dispatch) => {
     
             dispatch({type:FETCHING})
-            axios.post('http://localhost:3333/noteslist', note)
+            axios.post('https://notesapplambda.herokuapp.com/notes', note)
             .then((response) => {
                 dispatch({type:ADD_NOTE, notes:response.data})
             
@@ -38,7 +38,7 @@ export const addNote = (note) => {
 export const editNote = (note) => {
     return (dispatch) => {
         dispatch({type: FETCHING})
-        axios.put(`http://localhost:3333/note/${note.id}`, note)
+        axios.put(`https://notesapplambda.herokuapp.com/note/${note.id}`, note)
         .then((response) => {
             dispatch({type:SUCCESS, notes: response.data})
         })
