@@ -8,7 +8,7 @@ class CreateNote extends Component {
     state = {
         redirect: false,
         title: '',
-        body: '',
+        content: '',
 
     }
     // addNote = note => {
@@ -26,14 +26,14 @@ class CreateNote extends Component {
         e.preventDefault();
         console.log('testing');
         this.props.addNote(this.state)
-        this.setState({title: '', body:'', id: ''});
+        this.setState({title: '', content:'', id: ''});
         this.props.history.push('/');
     }
 
     componentDidMount() {
         const {note} = this.state;
         if (note) {
-            this.setState({title: note.title, body: note.body, id: note.id})
+            this.setState({title: note.title, content: note.content, id: note.id})
         }
     }
     
@@ -44,7 +44,7 @@ class CreateNote extends Component {
         return (
             <form className="form" onSubmit={this.handleButton} >
             <input className="form-title" name="title" value={this.state.title} onChange={this.handleChange} />
-            <textarea className="form-body" rows="25" name="body" value={this.state.body} onChange={this.handleChange}></textarea>
+            <textarea className="form-body" rows="25" name="body" value={this.state.content} onChange={this.handleChange}></textarea>
             <button type="submit" className="submit"   >Create</button>
             
             </form>
