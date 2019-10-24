@@ -22,10 +22,14 @@ export const getNotes = () => {
 //****need a function that forms the "note" to be passed to these functions
 
 export const addNote = (note) => {
+    console.log(note)
     // in this implementation I need to make sure to remember
     // that I am passing the ID on the dom not storing it
     return (dispatch) => {
     
+      //need to make sure the values are being passed
+        // 10/24/2019
+
             dispatch({type:FETCHING})
             axios.post('https://notesapplambda.herokuapp.com/notes', note)
             .then((response) => {
