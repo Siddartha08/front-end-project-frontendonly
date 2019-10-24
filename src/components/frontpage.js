@@ -15,19 +15,20 @@ import {connect} from 'react-redux';
     }
 
     componentDidMount() {
-        // this.props.getNotes();
-        // axios.get('http://localhost:3333/noteslist')
-        // .then((response) => {
-        //     console.log(response.data)
-        //     this.setState({notes:response.data})
-        // })
-
+        this.props.getNotes();
         axios.get('https://notesapplambda.herokuapp.com/notes')
+        // axios.get('http://localhost:3333/noteslist')
         .then((response) => {
             console.log(response.data)
-            dispatch({type:SUCCESS, notes:response.data})
+            this.setState({notes:response.data})
         })
-        .catch(error => {console.log(error)})
+
+        // axios.get('https://notesapplambda.herokuapp.com/notes')
+        // .then((response) => {
+        //     console.log(response.data)
+        //     dispatch({type:SUCCESS, notes:response.data})
+        // })
+        // .catch(error => {console.log(error)})
     }
 
     render() {
