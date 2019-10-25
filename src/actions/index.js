@@ -7,12 +7,13 @@ export const ERROR = 'ERROR';
 export const FETCHING = 'FETCHING';
 
 
-
+noteId = 0
 export const getNotes = () => {
     return (dispatch) => {
         axios.get('https://notesapplambda.herokuapp.com/notes')
         .then((response) => {
             console.log(response.data)
+            noteId = response.data.length
             dispatch({type:SUCCESS, notes:response.data})
         })
         .catch(error => {console.log(error)})
@@ -23,6 +24,8 @@ export const getNotes = () => {
 
 export const addNote = (note) => {
     console.log(note)
+    // needs 
+    note.id = noteId
     // in this implementation I need to make sure to remember
     // that I am passing the ID on the dom not storing it
     return (dispatch) => {
