@@ -25,19 +25,19 @@ import {connect} from 'react-redux';
             })
         })
 
-        axios.get('https://notesapplambda.herokuapp.com/notes')
-        .then((response) => {
-            console.log(response.data)
-            dispatch({type:SUCCESS, notes:response.data})
-        })
-        .catch(error => {console.log(error)})
+        // axios.get('https://notesapplambda.herokuapp.com/notes')
+        // .then((response) => {
+        //     console.log(response.data)
+        //     return dispatch({type:SUCCESS, notes:response.data})
+        // })
+        // .catch(error => {console.log(error)})
     }
     componentDidUpdate(){
         this.props.getNotes();
     }
 
     render() {
-        let { notes } = this.props;
+        let { notes } = this.state;
         // notes = notes.filter(note => {
         //     re
         // })
