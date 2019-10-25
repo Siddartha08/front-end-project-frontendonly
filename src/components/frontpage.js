@@ -37,7 +37,7 @@ import {connect} from 'react-redux';
     }
 
     render() {
-        let { notes } = this.props.notes;
+        let { notes } = this.props;
         // notes = notes.filter(note => {
         //     re
         // })
