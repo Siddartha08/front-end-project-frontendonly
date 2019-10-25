@@ -40,9 +40,9 @@ import {connect} from 'react-redux';
         return (
             <div className="note-container">
             <ul className="noteslist">
-            {this.props.notes.map((note, i) => {
-                
-                    <Link key={i} to={`note/${note.id}`} className="card">
+            {notes.map((note, i) => {
+                return (
+                    <Link key={note.title} to={`note/${note.title}`} className="card">
                     <li className='Note' >
                     <h1 className='Note_Title'>{note.title}</h1>
                     <hr/>
@@ -50,7 +50,7 @@ import {connect} from 'react-redux';
 
                      </li>
                     </Link>
-                
+                )
             })}
             </ul>
             </div>
