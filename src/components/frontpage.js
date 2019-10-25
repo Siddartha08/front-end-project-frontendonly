@@ -46,7 +46,7 @@ import {connect} from 'react-redux';
                     <li className='Note' >
                     <h1 className='Note_Title'>{note.title}</h1>
                     <hr/>
-                    <div className='Note_Body'>{note.body}</div>
+                    <div className='Note_Body'>{note.content}</div>
 
                      </li>
                     </Link>
