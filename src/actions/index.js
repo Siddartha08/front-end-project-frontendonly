@@ -7,7 +7,7 @@ export const ERROR = 'ERROR';
 export const FETCHING = 'FETCHING';
 
 
-noteId = 0
+var noteId = 0
 export const getNotes = () => {
     return (dispatch) => {
         axios.get('https://notesapplambda.herokuapp.com/notes')
@@ -23,6 +23,7 @@ export const getNotes = () => {
 //****need a function that forms the "note" to be passed to these functions
 
 export const addNote = (note) => {
+    
     console.log(note)
     // needs 
     note.id = noteId
