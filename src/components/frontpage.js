@@ -20,7 +20,9 @@ import {connect} from 'react-redux';
         // axios.get('http://localhost:3333/noteslist')
         .then((response) => {
             console.log(response.data)
-            this.setState({notes:response.data})
+            this.setState({
+                notes:response.data
+            })
         })
 
         // axios.get('https://notesapplambda.herokuapp.com/notes')
@@ -29,6 +31,9 @@ import {connect} from 'react-redux';
         //     dispatch({type:SUCCESS, notes:response.data})
         // })
         // .catch(error => {console.log(error)})
+    }
+    componentDidUpdate(){
+        this.props.getNotes();
     }
 
     render() {
