@@ -37,7 +37,7 @@ import {connect} from 'react-redux';
     }
 
     render() {
-        let { notes } = this.state;
+        let { notes } = this.props.notes;
         // notes = notes.filter(note => {
         //     re
         // })
@@ -45,7 +45,7 @@ import {connect} from 'react-redux';
         return (
             <div className="note-container">
             <ul className="noteslist">
-            {notes.map((note, i) => {
+            {notes.map ? notes.map((note, i) => {
                 return (
                     <Link key={note.title} to={`note/${note.title}`} className="card">
                     <li className='Note' >
@@ -56,7 +56,7 @@ import {connect} from 'react-redux';
                      </li>
                     </Link>
                 )
-            })}
+            }): "loading..."}
             </ul>
             </div>
 
