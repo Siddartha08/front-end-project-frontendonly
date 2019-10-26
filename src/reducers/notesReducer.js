@@ -20,6 +20,9 @@ export const notesReducer = (state = initialState, action) => {
         case ADD_NOTE:
             return {...state, notes:action.notes, fetching:false}
 
+        case EDIT_NOTE:
+            return {...state}
+
         case DELETE_NOTE:
             return state.notes.filter(note => note.id !== action.payload.id);
 

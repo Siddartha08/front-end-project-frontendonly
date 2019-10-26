@@ -48,7 +48,7 @@ export const editNote = (note) => {
         dispatch({type: FETCHING})
         axios.put(`https://notesapplambda.herokuapp.com/notes//note/${note.id}/${note.mdbid}`, note)
         .then((response) => {
-            dispatch({type:SUCCESS, notes: response.data})
+            dispatch({type:EDIT_NOTE})
         })
         .catch((err) => {console.log(err)})
     }
