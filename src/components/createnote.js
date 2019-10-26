@@ -33,7 +33,7 @@ class CreateNote extends Component {
     componentDidMount() {
         const {note} = this.state;
         if (note) {
-            this.setState({title: note.title, content: note.content, id: note._id})
+            this.setState({title: note.title, content: note.content, id: note.id})
         }
     }
     

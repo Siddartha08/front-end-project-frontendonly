@@ -10,6 +10,7 @@ class Edit extends Component {
         title: this.props.notes[this.props.match.params.id].title,
         content: this.props.notes[this.props.match.params.id].content,
         id: this.props.match.params.id,
+        mdbid: this.props.notes[this.props.match.params.id]._id
     }
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value});
@@ -18,7 +19,7 @@ class Edit extends Component {
         e.preventDefault();
         console.log(this.state);
         this.props.editNote(this.state)
-        this.setState({title: '', content:'', id: ''});
+        this.setState({title: '', content:'', id: '', mdbid: ''});
         this.props.history.push('/');
     }
     
