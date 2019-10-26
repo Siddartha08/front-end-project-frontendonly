@@ -8,7 +8,7 @@ class Edit extends Component {
   state = {
         redirect: false,
         title: this.props.notes[this.props.match.params.id].title,
-        body: this.props.notes[this.props.match.params.id].body,
+        content: this.props.notes[this.props.match.params.id].content,
         id: this.props.match.params.id,
     }
     handleChange = (e) => {
@@ -18,7 +18,7 @@ class Edit extends Component {
         e.preventDefault();
         console.log(this.state);
         this.props.editNote(this.state)
-        this.setState({title: '', body:'', id: ''});
+        this.setState({title: '', content:'', id: ''});
         this.props.history.push('/');
     }
     
@@ -28,7 +28,7 @@ render() {
     return(
         <form className="form" onSubmit={this.handleButton} >
         <input className="form-title" name="title" value={this.state.title} onChange={this.handleChange} />
-        <textarea className="form-body" rows="25" name="body" value={this.state.body} onChange={this.handleChange}></textarea>
+        <textarea className="form-body" rows="25" name="content" value={this.state.content} onChange={this.handleChange}></textarea>
         <button type="submit" className="submit"   >Edit</button>
         
         
