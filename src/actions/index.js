@@ -50,6 +50,7 @@ export const editNote = (note) => {
         .then((response) => {
             dispatch({type:SUCCESS, notes: response.data})
         })
+        .catch((err) => {console.log(err)})
     }
 }
 
