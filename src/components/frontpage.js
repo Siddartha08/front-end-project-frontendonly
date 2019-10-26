@@ -45,7 +45,7 @@ import {connect} from 'react-redux';
         return (
             <div className="note-container">
             <ul className="noteslist">
-            {notes.map ? notes.map((note, i) => {
+            {notes.map != null ? notes.map((note, i) => {
                 return (
                     <Link key={note.id} to={`note/${note.id}/${note._id}`} className="card">
                     <li className='Note' >

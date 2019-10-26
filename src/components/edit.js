@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {editNote} from '../actions'
-
+import {editNote} from '../actions';
+import {getNotes} from '../actions';
 class Edit extends Component {
 
 
@@ -20,6 +20,7 @@ class Edit extends Component {
         console.log(this.state);
         this.props.editNote(this.state)
         this.setState({title: '', content:'', id: '', mdbid: ''});
+        this.props.getNotes()
         this.props.history.push('/');
     }
     
@@ -54,4 +55,4 @@ const mapStateToProps = (state) => {
         notes: state.notesReducer.notes,
     }
 }
-export default connect(mapStateToProps, {editNote})(Edit)
+export default connect(mapStateToProps, {editNote, getNotes})(Edit)
