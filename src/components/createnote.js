@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import {addNote} from '../actions';
+import {addNote, getNotes} from '../actions';
 import {connect} from 'react-redux';
 
 class CreateNote extends Component {
@@ -27,6 +27,7 @@ class CreateNote extends Component {
         console.log('testing');
         this.props.addNote(this.state)
         this.setState({title: '', content:'', id: ''});
+        this.props.getNotes()
         this.props.history.push('/');
     }
 
@@ -60,4 +61,4 @@ class CreateNote extends Component {
 //     }
 // }
 
-export default connect(null, { addNote })(CreateNote);
+export default connect(null, { addNote , getNotes})(CreateNote);
