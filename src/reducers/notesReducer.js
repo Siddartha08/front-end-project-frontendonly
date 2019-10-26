@@ -18,7 +18,9 @@ export const notesReducer = (state = initialState, action) => {
         case SUCCESS:
             return {...state, notes:action.notes, fetching:false} 
         case ADD_NOTE:
-            return {...state, notes:action.notes, fetching:false}
+            return [...state.slice(0, action.index), action.payload, ...state.slice(action.index)] 
+            
+            // {...state, notes:action.notes, fetching:false}
 
         case EDIT_NOTE:
             return {...state}
