@@ -46,7 +46,7 @@ export const addNote = (note) => {
 export const editNote = (note) => {
     return (dispatch) => {
         dispatch({type: FETCHING})
-        axios.put(`https://notesapplambda.herokuapp.com/note/${note.id}`, note)
+        axios.put(`https://notesapplambda.herokuapp.com/note/${note.id}/${note._id}`, note)
         .then((response) => {
             dispatch({type:SUCCESS, notes: response.data})
         })
