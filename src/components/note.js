@@ -10,7 +10,8 @@ const Note = (props) => {
 
 
 console.log(props)
-
+        console.log(props.notes.match)
+        console.log(props.match.params.id)
         return (
             <div>
             <h1>{props.notes._id == props.match.params.id ? props.notes.title : 'loading title'}</h1>
