@@ -13,10 +13,10 @@ class Edit extends Component {
 
   state = {
         redirect: false,
-        title: OneNote.title,
-        content: OneNote.content,
-        id: OneNote.id,
-        mdbid: OneNote._id
+        title: this.OneNote.title,
+        content: this.OneNote.content,
+        id: this.OneNote.id,
+        mdbid: this.OneNote._id
     }
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value});
