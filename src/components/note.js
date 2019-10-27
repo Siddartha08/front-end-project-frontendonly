@@ -15,7 +15,7 @@ console.log(props)
             <div>
             <h1>{props.notes[props.match.params.id].title}</h1>
             <div>{props.notes[props.match.params.id].content}</div>
-            <Link  to={`/edit/${props.match.params.id}`} >
+            <Link  to={`/edit/${props.match.params._id}`} >
             <button className="button"> Edit </button> 
             </Link>
             </div>
