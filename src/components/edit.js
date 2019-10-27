@@ -4,13 +4,15 @@ import {editNote} from '../actions';
 import {getNotes} from '../actions';
 class Edit extends Component {
 
+    //need to reference redux state here to change.
+    OneNote = this.props.notes.filter(note => note._id == this.props.match.params.id)
 
   state = {
         redirect: false,
-        title: this.props.notes[this.props.match.params.id].title,
-        content: this.props.notes[this.props.match.params.id].content,
-        id: this.props.match.params.id,
-        mdbid: this.props.notes[this.props.match.params.id]._id
+        title: OneNote.title,
+        content: OneNote.content,
+        id: OneNote.id,
+        mdbid: OneNote._id
     }
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value});

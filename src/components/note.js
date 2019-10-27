@@ -12,10 +12,13 @@ const Note = (props) => {
 console.log(props)
         console.log(props.notes.match)
         console.log(props.match.params.id)
+
+        const note = props.notes.filter(note => note._id == props.match.params.id)
+
         return (
             <div>
-            <h1>{props.notes._id == props.match.params.id ? props.notes.title : 'loading title'}</h1>
-            <div>{props.notes._id == props.match.params.id ? props.notes.content : 'loading content'}</div>
+            <h1>{note.title != undefined ? note.title : "loading"}</h1>
+            <div>{note.content != undefined ? note.content : "loading content"}</div>
             <Link  to={`/edit/${props.match.params._id}`} >
             <button className="button"> Edit </button> 
             </Link>
