@@ -13,8 +13,8 @@ console.log(props)
 
         return (
             <div>
-            <h1>{props.notes._id == this.props.params.id ? props.notes.title : 'loading title'}</h1>
-            <div>{props.notes._id == this.props.params.id ? props.notes.content : 'loading content'}</div>
+            <h1>{props.notes._id == props.match.params.id ? props.notes.title : 'loading title'}</h1>
+            <div>{props.notes._id == props.match.params.id ? props.notes.content : 'loading content'}</div>
             <Link  to={`/edit/${props.match.params._id}`} >
             <button className="button"> Edit </button> 
             </Link>
