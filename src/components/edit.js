@@ -4,8 +4,12 @@ import {editNote} from '../actions';
 import {getNotes} from '../actions';
 class Edit extends Component {
 
+    constructor(props) {
+        super(props)
+        OneNote = this.props.notes.filter(note => note._id == this.props.match.params.id)
+    }
     //need to reference redux state here to change.
-    OneNote = this.props.notes.filter(note => note._id == this.props.match.params.id)
+
 
   state = {
         redirect: false,
