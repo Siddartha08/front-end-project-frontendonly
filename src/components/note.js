@@ -14,8 +14,9 @@ console.log(props)
         console.log(props.match.params.id)
 
         const note = props.notes.filter(note => note._id == props.match.params.id)
-
+        console.log(note)
         return (
+            
             <div>
             <h1>{props.notes.title != undefined ? props.notes.title : "loading"}</h1>
             <div>{note.content != undefined ? note.content : "loading content"}</div>
