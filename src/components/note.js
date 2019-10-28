@@ -18,8 +18,10 @@ console.log(props)
         return (
             
             <div>
-            <h1>{props.notes.title != undefined ? props.notes.title : "loading"}</h1>
-            <div>{note.content != undefined ? note.content : "loading content"}</div>
+            <h1>{props.notes[props.match.params.id].title}
+            
+            </h1>
+            <div>{props.notes[props.match.params.id].content}</div>
             <Link  to={`/edit/${props.match.params._id}`} >
             <button className="button"> Edit </button> 
             </Link>
