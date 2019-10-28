@@ -22,7 +22,7 @@ console.log(props)
             
             </h1>
             <div>{props.notes[props.match.params.id].content}</div>
-            <Link  to={`/edit/${props.match.params._id}`} >
+            <Link  to={`/edit/${props.notes[props.match.params.id]._id}`} >
             <button className="button"> Edit </button> 
             </Link>
             </div>
