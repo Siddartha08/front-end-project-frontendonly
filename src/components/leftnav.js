@@ -11,7 +11,7 @@ export default class Leftnav extends Component {
             <h1>Lambda Notes</h1>
             <Link to={'/'} > <button className="button" text="View Notes"> View Notes </button> </Link>
             <Link to={'/createnote'} > <button className="button" text="+ Create New Note">+ Create New Note</button> </Link>
-
+            <a href="https://notesapplambda.herokuapp.com/">click to start heroku</a>
             </div>
         )
     }
