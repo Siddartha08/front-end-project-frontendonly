@@ -8,7 +8,7 @@ const Note = (props) => {
  //props.match.params.id
 
 
-        handleButton = (id) => {
+        function handleButton(id) {
                 this.props.deleteNote(id)
         }
 
