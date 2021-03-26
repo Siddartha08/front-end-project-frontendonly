@@ -43,8 +43,6 @@ render() {
         <textarea className="form-body" rows="25" name="content" value={this.state.content} onChange={this.handleChange}></textarea>
         <button type="submit" className="submit">Edit</button>
         <button type="submit" className="submit">Delete</button>
-        
-        
         </form>
 
 

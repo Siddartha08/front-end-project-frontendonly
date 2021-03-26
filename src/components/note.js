@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import {deleteNote} from '../actions';
 const Note = (props) => {
 
     console.log(props);
  //props.match.params.id
 
 
+        handleButton = (id) => {
+                this.props.deleteNote(id)
+        }
 
-
-console.log(props)
+        console.log(props)
         console.log(props.notes.match)
         console.log(props.match.params.id)
 
@@ -24,6 +27,9 @@ console.log(props)
             <div>{props.notes[props.match.params.id].content}</div>
             <Link  to={`/edit/${props.match.params.id}`} >
             <button className="button"> Edit </button> 
+            </Link>
+            <Link to={`/`} onClick={this.handleButton(props.match.params.id)}>
+            <button className="Delete"> Delete </button> 
             </Link>
             </div>
         )
