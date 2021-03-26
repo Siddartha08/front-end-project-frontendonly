@@ -54,6 +54,17 @@ export const editNote = (note) => {
     }
 }
 
+export const deleteNote = (id) => {
+    return (dispatch) => {
+        dispatch({type: DELETE_NOTE})
+        axios.delete(`https://notesapplambda.herokuapp.com/notes//note/${note.mdbid}`)
+        .then((response) =>{
+            dispatch({type:DELETE_NOTE})
+        })
+        .catch((err) => {console.log(err)})
+    }
+}
+
 
 //need to pass the whole object
 // export const editNote = (note) => {
