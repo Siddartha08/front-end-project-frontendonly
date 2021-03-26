@@ -57,7 +57,7 @@ export const editNote = (note) => {
 export const deleteNote = (id) => {
     return (dispatch) => {
         dispatch({type: DELETE_NOTE})
-        axios.delete(`https://notesapplambda.herokuapp.com/notes//note/${note.mdbid}`)
+        axios.delete(`https://notesapplambda.herokuapp.com/notes//note/${id}`)
         .then((response) =>{
             dispatch({type:DELETE_NOTE})
         })
