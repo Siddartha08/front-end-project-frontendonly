@@ -26,7 +26,7 @@ export const notesReducer = (state = initialState, action) => {
             return {...state}
 
         case DELETE_NOTE:
-            return state.notes.filter(note => note.id !== action.payload.id);
+            return {...state}
 
         case ERROR:
             return {...state, error:action.error}

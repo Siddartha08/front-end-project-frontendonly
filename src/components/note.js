@@ -4,7 +4,9 @@ import {Link} from 'react-router-dom';
 import {deleteNote} from '../actions';
 
 function handleButton(id) {
+    console.log('handlebutton working')
     deleteNote(id)
+    console.log('past delete not function')
 }
 
 const Note = (props) => {
