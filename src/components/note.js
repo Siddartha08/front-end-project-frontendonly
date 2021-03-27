@@ -33,7 +33,7 @@ const Note = (props) => {
             <Link  to={`/edit/${props.match.params.id}`} >
             <button className="button"> Edit </button> 
             </Link>
-            <Link to={`/`} onClick={handleButton(props.match.params.id)}>
+            <Link to={`/`} onClick={this.handleButton(props.match.params.id)}>
             <button className="Delete"> Delete </button> 
             </Link>
             </div>
