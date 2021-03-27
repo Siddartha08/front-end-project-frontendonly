@@ -36,7 +36,7 @@ const Note = (props) => {
             <button className="button"> Edit </button> 
             </Link>
             
-            <button onClick={() => {this.handleButton(props.match.params.id)}} className="delete"> Delete </button> 
+            <button onClick={() => {handleButton(props.match.params.id)}} className="delete"> Delete </button> 
             
             </div>
         )
