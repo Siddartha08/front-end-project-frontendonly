@@ -2,22 +2,27 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {deleteNote} from '../actions';
+
+let handleButton = (id) => {
+    deleteNote(id)
+}
+
 const Note = (props) => {
 
-    console.log(props);
+    // console.log(props);
  //props.match.params.id
 
 
-        function handleButton(id) {
-                deleteNote(id)
-        }
+    
 
-        console.log(props)
-        console.log(props.notes.match)
-        console.log(props.match.params.id)
+        // console.log(props)
+        // console.log(props.notes.match)
+        // console.log(props.match.params.id)
 
-        const note = props.notes.filter(note => note._id == props.match.params.id)
-        console.log(note)
+        // const note = props.notes.filter(note => note._id == props.match.params.id)
+        // console.log(note)
+
+       
         return (
             
             <div>
@@ -28,14 +33,15 @@ const Note = (props) => {
             <Link  to={`/edit/${props.match.params.id}`} >
             <button className="button"> Edit </button> 
             </Link>
-            <Link to={`/`} onClick={this.handleButton(props.match.params.id)}>
+            <Link to={`/`} onClick={handleButton(props.match.params.id)}>
             <button className="Delete"> Delete </button> 
             </Link>
             </div>
         )
-}
+        
 
 
+    }
 
 
 
