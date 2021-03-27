@@ -6,7 +6,8 @@ import {deleteNote} from '../actions';
 const deleteFunction = (props) => {
     function handleButton(id) {
         console.log('handlebutton working')
-        this.props.deleteNote(id)
+        this.props.deleteNote(props.match.params.id)
+        console.log(this.props.deleteNote())
         console.log('past delete not function')
     }
 }
