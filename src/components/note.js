@@ -35,12 +35,12 @@ const Note = (props) => {
             <Link  to={`/edit/${props.match.params.id}`} >
             <button className="button"> Edit </button> 
             </Link>
-            <Link to={`/`} onClick={() => {this.handleButton(props.match.params.id)}}>
+            <Link  onClick={() => {this.handleButton(props.match.params.id)}}>
             <button className="delete"> Delete </button> 
             </Link>
             </div>
         )
-        
+        // to={`/`}
 
 
     }

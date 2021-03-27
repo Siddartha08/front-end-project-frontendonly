@@ -28,8 +28,8 @@ class Edit extends Component {
         } else {
             this.props.deleteNote(this.state.id)
         }
-        this.props.getNotes()
-        this.props.history.push('/');
+        // this.props.getNotes()
+        // this.props.history.push('/');
     }
 
 
