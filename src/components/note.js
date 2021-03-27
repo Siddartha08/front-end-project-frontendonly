@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {deleteNote} from '../actions';
 
-function handleButton (id) {
+function handleButton(id) {
     deleteNote(id)
 }
 
@@ -33,7 +33,7 @@ const Note = (props) => {
             <Link  to={`/edit/${props.match.params.id}`} >
             <button className="button"> Edit </button> 
             </Link>
-            <Link to={`/`} onClick={handleButton(props.match.params.id)}>
+            <Link to={`/`} onClick={() => {this.handleButton(props.match.params.id)}}>
             <button className="delete"> Delete </button> 
             </Link>
             </div>
