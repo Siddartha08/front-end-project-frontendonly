@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {deleteNote} from '../actions';
 
-let handleButton = (id) => {
+function handleButton (id) {
     deleteNote(id)
 }
 
