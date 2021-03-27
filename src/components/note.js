@@ -3,18 +3,21 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {deleteNote} from '../actions';
 
-function handleButton(id) {
-    console.log('handlebutton working')
-    deleteNote(id)
-    console.log('past delete not function')
+const deleteFunction = (props) => {
+    function handleButton(id) {
+        console.log('handlebutton working')
+        this.props.deleteNote(id)
+        console.log('past delete not function')
+    }
 }
 
-const Note = (props) => {
 
+const Note = (props, deleteFunction) => {
+    
     // console.log(props);
  //props.match.params.id
 
-
+        let handleButton = deleteFunction.handleButton()
     
 
         // console.log(props)
