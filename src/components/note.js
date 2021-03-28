@@ -23,7 +23,7 @@ class Note extends Component {
     axios.delete(`https://notesapplambda.herokuapp.com/notes/note/${this.state.mdbid}`)
         .then((response) =>{
             console.log('successful deletion')
-            dispatch({type:DELETE_NOTE})
+            // dispatch({type:DELETE_NOTE})
         })
 
     this.props.deleteNote(this.state.mdbid).catch(err => console.log(err))
