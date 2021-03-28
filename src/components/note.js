@@ -26,7 +26,7 @@ class Note extends Component {
             // dispatch({type:DELETE_NOTE})
         })
 
-    this.props.deleteNote(this.state.mdbid).catch(err => console.log(err))
+    //this.props.deleteNote(this.state.mdbid).catch(err => console.log(err))
     console.log('past delete not function')
 }
 
@@ -42,7 +42,7 @@ class Note extends Component {
             <button className="button"> Edit </button> 
             </Link>
             <Link  to={`/`} >
-            <button onClick={() => {this.handleButton}} className="delete"> Delete </button> 
+            <button onClick={() => {this.handleButton()}} className="delete"> Delete </button> 
             </Link>
             </div>
         )
