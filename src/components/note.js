@@ -3,11 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {deleteNote} from '../actions';
 
-function handleButton(id) {
-    console.log('handlebutton working')
-    deleteNote(props.match.params.id)
-    console.log('past delete not function')
-}
+
 
 class Note extends Component {
 
@@ -22,7 +18,7 @@ class Note extends Component {
  //props.match.params.id
  handleButton(id) {
     console.log('handlebutton working')
-    deleteNote(props.match.params.id)
+    deleteNote(id)
     console.log('past delete not function')
 }
 
@@ -39,15 +35,15 @@ class Note extends Component {
         return (
             
             <div>
-            <h1>{props.notes[props.match.params.id].title}
+            <h1>{this.state.title}
             
             </h1>
-            <div>{props.notes[props.match.params.id].content}</div>
-            <Link  to={`/edit/${props.match.params.id}`} >
+            <div>{this.state.content}</div>
+            <Link  to={`/edit/${this.state.id}`} >
             <button className="button"> Edit </button> 
             </Link>
             
-            <button onClick={() => {this.handleButton(props.match.params.id, this)}} className="delete"> Delete </button> 
+            <button onClick={() => {this.handleButton(this.state.id)}} className="delete"> Delete </button> 
             
             </div>
         )
