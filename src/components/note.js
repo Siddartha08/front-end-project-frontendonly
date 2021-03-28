@@ -16,20 +16,11 @@ class Note extends Component {
     }
     // console.log(props);
  //props.match.params.id
- handleButton(id) {
+ handleButton(e) {
     console.log('handlebutton working')
-    deleteNote(id)
+    this.props.divdeleteNote()
     console.log('past delete not function')
 }
-
-    
-
-        // console.log(props)
-        // console.log(props.notes.match)
-        // console.log(props.match.params.id)
-
-        // const note = props.notes.filter(note => note._id == props.match.params.id)
-        // console.log(note)
 
         render() {
         return (
@@ -43,7 +34,7 @@ class Note extends Component {
             <button className="button"> Edit </button> 
             </Link>
             
-            <button onClick={() => {this.handleButton(this.state.id)}} className="delete"> Delete </button> 
+            <button onClick={() => {this.handleButton}} className="delete"> Delete </button> 
             
             </div>
         )

@@ -3,10 +3,10 @@ import {connect} from 'react-redux';
 import {editNote} from '../actions';
 import {getNotes} from '../actions';
 import {deleteNote} from '../actions';
+
+
+
 class Edit extends Component {
-
-    //need to reference redux state here to change.
-
 
   state = {
         redirect: false,
@@ -15,9 +15,13 @@ class Edit extends Component {
         id: this.props.match.params.id,
         mdbid: this.props.notes[this.props.match.params.id]._id
     }
+
+
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value});
     }
+
+
     handleButton = (e) => {
         e.preventDefault();
         console.log(this.state);
