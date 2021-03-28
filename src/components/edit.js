@@ -21,13 +21,10 @@ class Edit extends Component {
     handleButton = (e) => {
         e.preventDefault();
         console.log(this.state);
-        if(this.state.title != this.props.notes[this.props.match.params.id].title) {
-        console.log("different states")
+ 
         this.props.editNote(this.state)
         this.setState({title: '', content:'', id: '', mdbid: ''});
-        } else {
-            this.props.deleteNote(this.state.id)
-        }
+     
         this.props.getNotes()
         this.props.history.push('/');
     }
@@ -42,7 +39,7 @@ render() {
         <input className="form-title" name="title" value={this.state.title} onChange={this.handleChange} />
         <textarea className="form-body" rows="25" name="content" value={this.state.content} onChange={this.handleChange}></textarea>
         <button type="submit" className="submit">Edit</button>
-        <button type="submit" className="submit">Delete</button>
+        
         </form>
 
 
