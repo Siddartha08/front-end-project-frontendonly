@@ -15,9 +15,10 @@ class Note extends Component {
         id: this.props.match.params.id,
         mdbid: this.props.notes[this.props.match.params.id]._id
     }
+    
     // console.log(props);
  //props.match.params.id
- handleButton(e) {
+ handleButton = (e) => {
     console.log('handlebutton working')
 
     axios.delete(`https://notesapplambda.herokuapp.com/notes/note/${this.state.mdbid}`)
@@ -41,9 +42,9 @@ class Note extends Component {
             <Link  to={`/edit/${this.state.id}`} >
             <button className="button"> Edit </button> 
             </Link>
-            <Link  to={`/`} >
-            <button onClick={() => {this.handleButton()}} className="delete"> Delete </button> 
-            </Link>
+            
+            <button onClick={() => {this.handleButton, console.log('buttonclicked')}} className="delete"> Delete </button> 
+            
             </div>
         )
         

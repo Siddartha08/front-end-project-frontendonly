@@ -37,7 +37,7 @@ class Edit extends Component {
     
     //this.props.match.params.id
 
-render() {
+    render() {
     return(
         <form className="form" onSubmit={this.handleButton} >
         <input className="form-title" name="title" value={this.state.title} onChange={this.handleChange} />
@@ -47,8 +47,8 @@ render() {
         </form>
 
 
-    )
-}
+        )
+    }
 
 }
 
