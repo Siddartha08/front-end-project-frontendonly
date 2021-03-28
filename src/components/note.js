@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {deleteNote} from '../actions';
+import axios from 'axios';
 
 
 
@@ -18,6 +19,13 @@ class Note extends Component {
  //props.match.params.id
  handleButton(e) {
     console.log('handlebutton working')
+
+    axios.delete(`https://notesapplambda.herokuapp.com/notes/note/${this.state.mdbid}`)
+        .then((response) =>{
+            console.log('successful deletion')
+            dispatch({type:DELETE_NOTE})
+        })
+
     this.props.deleteNote(this.state.mdbid).catch(err => console.log(err))
     console.log('past delete not function')
 }
@@ -33,9 +41,9 @@ class Note extends Component {
             <Link  to={`/edit/${this.state.id}`} >
             <button className="button"> Edit </button> 
             </Link>
-            
+            <Link  to={`/`} >
             <button onClick={() => {this.handleButton}} className="delete"> Delete </button> 
-            
+            </Link>
             </div>
         )
         
