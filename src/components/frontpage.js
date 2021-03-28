@@ -32,9 +32,9 @@ import {connect} from 'react-redux';
         // })
         // .catch(error => {console.log(error)})
     }
-    componentDidUpdate(){
-        this.props.getNotes();
-    }
+    // componentDidUpdate(){
+    //     this.props.getNotes();
+    // }
 
     render() {
         let { notes } = this.props;
