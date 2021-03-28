@@ -18,7 +18,7 @@ class Note extends Component {
  //props.match.params.id
  handleButton(e) {
     console.log('handlebutton working')
-    this.props.divdeleteNote()
+    this.props.deleteNote(this.state.mdbid).catch(err => console.log(err))
     console.log('past delete not function')
 }
 
